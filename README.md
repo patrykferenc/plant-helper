@@ -18,5 +18,6 @@ A project designed to help farmers (and alike) with caring for their crops.
 TODO: Discuss and update
 
 ## Architecture diagram
-
+![diagram](https://user-images.githubusercontent.com/72550341/206007379-b8976558-df15-4619-8256-bec29f86061a.png)
 TODO: Prepare a WIP version after the discussion
+
