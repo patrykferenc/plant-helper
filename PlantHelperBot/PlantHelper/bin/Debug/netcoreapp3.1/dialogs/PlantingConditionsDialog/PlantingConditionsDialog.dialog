@@ -1,0 +1,49 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ADJiVO",
+    "name": "PlantingConditionsDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "7Gou1v"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "uCDxly"
+          },
+          "activity": "${SendActivity_uCDxly()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SgwrIR",
+        "name": "BackToMenu"
+      },
+      "intent": "BackToMenu",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "hQchAH"
+          }
+        }
+      ],
+      "condition": "= #BackToMenu.Score >=0.8"
+    }
+  ],
+  "generator": "PlantingConditionsDialog.lg",
+  "recognizer": "PlantingConditionsDialog.lu.qna",
+  "id": "PlantingConditionsDialog"
+}

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_QnADialog",
+  "recognizers": {
+    "en-us": "QnADialog.en-us.lu",
+    "": "QnADialog.en-us.lu"
+  }
+}

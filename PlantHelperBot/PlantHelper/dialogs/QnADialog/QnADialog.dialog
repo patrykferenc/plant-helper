@@ -1,0 +1,106 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Thwmf8",
+    "name": "QnADialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "dCGBxH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "UhsV8f"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_UhsV8f()}",
+          "property": "user.qnaInput"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "id": "httpRequestQnA",
+          "$designer": {
+            "id": "cfnY2O",
+            "comment": "httpRequestQnA"
+          },
+          "resultProperty": "turn.results",
+          "method": "POST",
+          "body": "{   \"question\": \"${user.qnaInput}\" }",
+          "url": "https://plantlanguage.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=QnAPlant&api-version=2021-10-01&deploymentName=production",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": ""
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QRIs2B"
+          },
+          "activity": "${SendActivity_QRIs2B()}"
+        },
+        {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "DwL8LH"
+          },
+          "property": "user.qnaInput"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "JKQpCF"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_JKQpCF()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "user.qnaInput"
+        },
+        {
+          "$kind": "Microsoft.GotoAction",
+          "$designer": {
+            "id": "I0FvDO"
+          },
+          "actionId": "httpRequestQnA"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "3G7Lul",
+        "name": "BackToMenu"
+      },
+      "intent": "BackToMenu",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "frAd0N"
+          }
+        }
+      ],
+      "condition": "= #BackToMenu.Score >=0.8"
+    }
+  ],
+  "generator": "QnADialog.lg",
+  "recognizer": "QnADialog.lu.qna",
+  "id": "QnADialog"
+}

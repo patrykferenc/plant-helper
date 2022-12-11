@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_CropImpactDialog",
+  "recognizers": {
+    "en-us": "CropImpactDialog.en-us.lu",
+    "": "CropImpactDialog.en-us.lu"
+  }
+}
