@@ -1,0 +1,49 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Ljdkbt",
+    "name": "WeatherDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "MQDijL"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "isj03J"
+          },
+          "activity": "${SendActivity_isj03J()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "l8Rmdl",
+        "name": "BackToMenu"
+      },
+      "intent": "BackToMenu",
+      "condition": "=#BackToMenu.Score >=0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "P7rmVW"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "WeatherDialog.lg",
+  "recognizer": "WeatherDialog.lu.qna",
+  "id": "WeatherDialog"
+}

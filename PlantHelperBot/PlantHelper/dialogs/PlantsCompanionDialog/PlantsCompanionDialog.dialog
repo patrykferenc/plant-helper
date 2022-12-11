@@ -1,0 +1,49 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fXcFZb",
+    "name": "PlantsCompanionDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "1Yx7Sd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "iiqrFZ"
+          },
+          "activity": "${SendActivity_iiqrFZ()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "jP3Bgp",
+        "name": "BackToMenu"
+      },
+      "intent": "BackToMenu",
+      "condition": "= #BackToMenu.Score >=0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "T4AZfb"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "PlantsCompanionDialog.lg",
+  "recognizer": "PlantsCompanionDialog.lu.qna",
+  "id": "PlantsCompanionDialog"
+}
