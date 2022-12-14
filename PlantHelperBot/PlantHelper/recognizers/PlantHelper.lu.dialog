@@ -1,8 +1,0 @@
-{
-  "$kind": "Microsoft.MultiLanguageRecognizer",
-  "id": "LUIS_PlantHelper",
-  "recognizers": {
-    "en-us": "PlantHelper.en-us.lu",
-    "": "PlantHelper.en-us.lu"
-  }
-}

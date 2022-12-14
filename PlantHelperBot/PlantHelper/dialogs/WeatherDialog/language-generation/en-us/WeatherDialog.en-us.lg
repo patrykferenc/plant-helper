@@ -1,9 +1,0 @@
-[import](common.lg)
-
-# SendActivity_isj03J()
-[Activity
-    Text = ${SendActivity_isj03J_text()}
-]
-
-# SendActivity_isj03J_text()
-- Weather!

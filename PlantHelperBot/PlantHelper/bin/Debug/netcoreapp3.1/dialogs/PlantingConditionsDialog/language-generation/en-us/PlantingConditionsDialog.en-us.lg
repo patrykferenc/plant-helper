@@ -1,9 +1,0 @@
-[import](common.lg)
-
-# SendActivity_uCDxly()
-[Activity
-    Text = ${SendActivity_uCDxly_text()}
-]
-
-# SendActivity_uCDxly_text()
-- conditions for plants
