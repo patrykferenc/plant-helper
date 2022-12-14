@@ -1,0 +1,48 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "H3VOud",
+    "name": "CropImpactDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "w3iYOp"
+      },
+      "actions": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SZkaIP",
+        "name": "BackToMenu"
+      },
+      "intent": "BackToMenu",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "M1dTDt"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "CropImpactDialog.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "BackToMenu",
+        "pattern": "Back to menu!"
+      }
+    ]
+  },
+  "id": "CropImpactDialog"
+}
