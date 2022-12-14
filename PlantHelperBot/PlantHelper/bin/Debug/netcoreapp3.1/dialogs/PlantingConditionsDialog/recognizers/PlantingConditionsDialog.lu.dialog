@@ -1,8 +1,0 @@
-{
-  "$kind": "Microsoft.MultiLanguageRecognizer",
-  "id": "LUIS_PlantingConditionsDialog",
-  "recognizers": {
-    "en-us": "PlantingConditionsDialog.en-us.lu",
-    "": "PlantingConditionsDialog.en-us.lu"
-  }
-}

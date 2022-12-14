@@ -1,9 +1,0 @@
-[import](common.lg)
-
-# SendActivity_7dCVYq()
-[Activity
-    Text = ${SendActivity_7dCVYq_text()}
-]
-
-# SendActivity_7dCVYq_text()
-- Visualization
