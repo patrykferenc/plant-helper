@@ -1,0 +1,81 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Attachments = ${json(SendActivity_Greeting_text())}
+]
+
+# SendActivity_Greeting_text()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "backgroundImage": {
+        "url": "https://planthelperstorage.blob.core.windows.net/planthelperimages/chat-bg.png"
+    },
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Welcome to your bot!",
+                    "wrap": true,
+                    "weight": "default",
+                    "size": "medium"
+                }
+            ]
+        }
+    ]
+}
+```
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Attachments = ${json(SendActivity_DidNotUnderstand_text())}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "backgroundImage": {
+        "url": "https://planthelperstorage.blob.core.windows.net/planthelperimages/chat-bg.png"
+    },
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Sorry, I didn't get that.",
+                    "wrap": true,
+                    "weight": "default",
+                    "size": "medium"
+                }
+            ]
+        }
+    ]
+}
+```
+# ChoiceInput_Prompt_Q0aprJ()
+[Activity
+    Text = ${ChoiceInput_Prompt_Q0aprJ_text()}
+]
+
+# ChoiceInput_Prompt_Q0aprJ_text()
+- Select option below:
+
+# SendActivity_Hw2hgA()
+[Activity
+    Text = ${SendActivity_Hw2hgA_text()}
+]
+
+# SendActivity_Hw2hgA_text()
+- Sorry, I didn't get that 😢
+- I'm not sure I understand 😕. Can you please try again?
+- Hmm, I don't understand 😕. Can you try to ask me in a different way.
+- I didn't get that ☹️. Would you mind rephrasing and try it again.
