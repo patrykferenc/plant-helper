@@ -9,7 +9,7 @@ public class FutureReportFactory implements WeatherReportUriFactory {
     @Override
     public String valueOf(WeatherReport weatherReport) {
         if (!isFutureReport(weatherReport)) {
-            throw new RuntimeException("Illegal factory usage without FutureReport class !");
+            throw new IllegalStateException("Illegal factory usage without FutureReport class !");
         }
         return getUri((FutureReport) weatherReport);
     }
@@ -20,7 +20,7 @@ public class FutureReportFactory implements WeatherReportUriFactory {
 
     private String getUri(FutureReport futureReport) {
         return String.format("%s/v1/%s.json?%s=%s&%s=%s&%s=%s",
-                ApiConstants.API_URI, ReportType.future.name(), ApiConstants.API_KEY_PARAM, ApiConstants.API_KEY,
+                ApiConstants.API_URI, ReportType.FUTURE.name().toLowerCase(), ApiConstants.API_KEY_PARAM, ApiConstants.API_KEY,
                 ApiConstants.API_LOCATION_PARAM, futureReport.getLocation(), ApiConstants.API_DATE_PARAM, futureReport.getDate().toString());
     }
 }
