@@ -13,11 +13,16 @@
 ]
 
 # NumberInput_Prompt_AMyIQw_text()
-- And how many days ahead ? 
+- And how many days ahead?
+
 # SendActivity_CcF47w()
 [Activity
     Text = ${SendActivity_CcF47w_text()}
 ]
 
 # SendActivity_CcF47w_text()
-- ${turn.results}
+- ```Weather in ${user.location} in ${user.days_ahead} day(s):
+Humidity: ${turn.results.content.humidity} %
+Temperature: ${turn.results.content.temperature}  °C
+Precipitation: ${turn.results.content.percip} mm```
+

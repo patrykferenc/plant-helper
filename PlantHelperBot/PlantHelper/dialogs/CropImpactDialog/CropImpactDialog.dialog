@@ -15,7 +15,15 @@
         "description": "",
         "id": "w3iYOp"
       },
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7dCVYq"
+          },
+          "activity": "${SendActivity_7dCVYq()}"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -31,18 +39,11 @@
             "id": "M1dTDt"
           }
         }
-      ]
+      ],
+      "condition": "= #BackToMenu.Score >=0.8"
     }
   ],
   "generator": "CropImpactDialog.lg",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "BackToMenu",
-        "pattern": "Back to menu!"
-      }
-    ]
-  },
+  "recognizer": "CropImpactDialog.lu.qna",
   "id": "CropImpactDialog"
 }

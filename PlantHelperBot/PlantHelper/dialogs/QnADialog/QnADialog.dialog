@@ -24,10 +24,9 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
           "prompt": "${TextInput_Prompt_UhsV8f()}",
           "property": "user.qnaInput"
         },
@@ -41,9 +40,9 @@
           "resultProperty": "turn.results",
           "method": "POST",
           "body": "{   \"question\": \"${user.qnaInput}\" }",
-          "url": "https://plantlanguage.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=QnAPlant&api-version=2021-10-01&deploymentName=production",
+          "url": "https://bot-language.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=bot-knowledgebase&api-version=2021-10-01&deploymentName=production",
           "headers": {
-            "Ocp-Apim-Subscription-Key": "925e80df34e24a11943ae827d4827344"
+            "Ocp-Apim-Subscription-Key": "6bec1b03654d43b59b097d3b79f728c5"
           }
         },
         {
@@ -98,18 +97,10 @@
           }
         }
       ],
-      "condition": true
+      "condition": "= #BackToMenu.Score >=0.8"
     }
   ],
   "generator": "QnADialog.lg",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "BackToMenu",
-        "pattern": "Back to menu!"
-      }
-    ]
-  },
+  "recognizer": "QnADialog.lu.qna",
   "id": "QnADialog"
 }

@@ -1,1 +1,11 @@
 [import](common.lg)
+
+# SendActivity_iiqrFZ()
+[Activity
+    Text = ${SendActivity_iiqrFZ_text()}
+]
+
+# SendActivity_iiqrFZ_text()
+- ```what to plant next to each other
+
+```
