@@ -5,6 +5,36 @@
   "description": "These are all of the kinds that can be created by the loader.",
   "oneOf": [
     {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.CreateContainer"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.CreateDatabase"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.CreateItem"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteContainer"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteDatabase"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteItem"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.GetItem"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.QueryItems"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.ReplaceItem"
+    },
+    {
+      "$ref": "#/definitions/Iciclecreek.Cosmos.UpsertItem"
+    },
+    {
       "$ref": "#/definitions/Microsoft.ActivityTemplate"
     },
     {
@@ -443,6 +473,659 @@
         "user.age > 13"
       ]
     },
+    "Iciclecreek.Cosmos.CreateContainer": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "CreateContainer",
+      "description": "Create a container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "partitionKey",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable this action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string"
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Name of the database"
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "Name of the Container."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.CreateContainer"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.CreateDatabase": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "CreateDatabase",
+      "description": "Create a cosmos database",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.CreateDatabase"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.CreateItem": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "CreateItem",
+      "description": "Create item in a container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "item",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "item": {
+          "$ref": "#/definitions/objectExpression",
+          "title": "Item",
+          "description": "Item to create."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "Partition key"
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result property",
+          "description": "Result property"
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.CreateItem"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.DeleteContainer": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "DeleteContainer",
+      "description": "Delete a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.DeleteContainer"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.DeleteDatabase": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "DeleteDatabase",
+      "description": "Delete a cosmos database",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.DeleteDatabase"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.DeleteItem": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "DeleteItem",
+      "description": "Delete item in a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "itemId": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Item id",
+          "description": "ItemId of the item to delete."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "PartitionKey of the item to delete."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.DeleteItem"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.GetItem": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "GetItem",
+      "description": "Get item in a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "itemId",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "itemId": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Item id",
+          "description": "Item id of the item to get."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "PartitionKey of the item to get."
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result property",
+          "description": "Property to put the result of this operation into."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.GetItem"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.QueryItems": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "QueryItems",
+      "description": "Query items in a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable this action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "query": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Query",
+          "description": "CosmosDB query to execute."
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result property",
+          "description": "Property to put the result of this operation into."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.QueryItems"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.ReplaceItem": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "ReplaceItem",
+      "description": "Replace in a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "item",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable this action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "item": {
+          "$ref": "#/definitions/objectExpression",
+          "title": "Item",
+          "description": "Item to replace."
+        },
+        "itemId": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Item id",
+          "description": "ItemId of item to replace."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "PartitionKey of item to replace."
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result property",
+          "description": "Property to put the result of this operation into."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.ReplaceItem"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "Iciclecreek.Cosmos.UpsertItem": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "UpsertItem",
+      "description": "Upsert item in a cosmos container",
+      "type": "object",
+      "required": [
+        "connectionString",
+        "database",
+        "container",
+        "item",
+        "$kind"
+      ],
+      "$package": {
+        "name": "Iciclecreek.Bot.Builder.Dialogs.Database.Cosmos",
+        "version": "4.16.0"
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "disabled": {
+          "$ref": "#/definitions/booleanExpression",
+          "title": "Disabled",
+          "description": "Disable this action"
+        },
+        "connectionString": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Connection string",
+          "description": "Connection string for cosmosdb."
+        },
+        "database": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Database",
+          "description": "Database name."
+        },
+        "container": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Container",
+          "description": "Name of the Container."
+        },
+        "item": {
+          "$ref": "#/definitions/objectExpression",
+          "title": "Item",
+          "description": "Item to upsert."
+        },
+        "partitionKey": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Partition key",
+          "description": "PartitionKey of item to upsert."
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result property",
+          "description": "Property to put result of this operation into."
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "Iciclecreek.Cosmos.UpsertItem"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
     "integerExpression": {
       "$role": "expression",
       "title": "Integer or expression",
@@ -475,7 +1158,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -511,7 +1194,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -620,7 +1303,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -660,7 +1343,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -740,7 +1423,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "type": "object",
       "required": [
@@ -932,7 +1615,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1023,7 +1706,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1145,7 +1828,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -1192,7 +1875,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1259,7 +1942,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1325,7 +2008,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1365,7 +2048,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1543,7 +2226,7 @@
               }
             },
             {
-              "$ref": "#/definitions/stringExpression"
+              "$ref": "#/definitions/equalsExpression"
             }
           ]
         },
@@ -1721,7 +2404,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -1768,7 +2451,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1808,7 +2491,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -1898,7 +2581,7 @@
               }
             },
             {
-              "$ref": "#/definitions/stringExpression"
+              "$ref": "#/definitions/equalsExpression"
             }
           ]
         },
@@ -2108,7 +2791,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2182,7 +2865,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2245,7 +2928,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2293,7 +2976,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2341,7 +3024,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -2378,7 +3061,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -2424,7 +3107,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -2591,7 +3274,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -2642,7 +3325,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2698,7 +3381,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2756,7 +3439,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2808,7 +3491,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -2847,7 +3530,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -2925,7 +3608,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3013,7 +3696,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3051,7 +3734,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3152,7 +3835,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3208,7 +3891,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3255,7 +3938,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3293,7 +3976,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3376,7 +4059,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3455,7 +4138,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3518,7 +4201,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3573,7 +4256,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3635,7 +4318,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3687,7 +4370,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3724,7 +4407,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -3763,7 +4446,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -3902,7 +4585,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Declarative",
-        "version": "4.18.1"
+        "version": "4.16.0"
       }
     },
     "Microsoft.IAdapter": {
@@ -3932,6 +4615,36 @@
       "description": "Components which derive from Dialog",
       "$role": "interface",
       "oneOf": [
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.CreateContainer"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.CreateDatabase"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.CreateItem"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteContainer"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteDatabase"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.DeleteItem"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.GetItem"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.QueryItems"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.ReplaceItem"
+        },
+        {
+          "$ref": "#/definitions/Iciclecreek.Cosmos.UpsertItem"
+        },
         {
           "$ref": "#/definitions/Microsoft.AdaptiveDialog"
         },
@@ -4083,7 +4796,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Declarative",
-        "version": "4.18.1"
+        "version": "4.16.0"
       }
     },
     "Microsoft.IEntityRecognizer": {
@@ -4093,7 +4806,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "oneOf": [
         {
@@ -4168,7 +4881,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -4249,14 +4962,14 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       }
     },
     "Microsoft.InputDialog": {
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -4400,7 +5113,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -4513,7 +5226,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Declarative",
-        "version": "4.18.1"
+        "version": "4.16.0"
       }
     },
     "Microsoft.ITextTemplate": {
@@ -4530,7 +5243,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Declarative",
-        "version": "4.18.1"
+        "version": "4.16.0"
       }
     },
     "Microsoft.ITrigger": {
@@ -4539,7 +5252,7 @@
       "description": "Components which derive from OnCondition class.",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "oneOf": [
         {
@@ -4642,7 +5355,7 @@
       "description": "Components which derive from TriggerSelector class.",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "oneOf": [
         {
@@ -4673,7 +5386,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -4720,7 +5433,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -4928,7 +5641,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -4962,7 +5675,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5004,7 +5717,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -5059,7 +5772,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5099,7 +5812,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5276,7 +5989,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5317,7 +6030,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -5458,7 +6171,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -5528,7 +6241,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5611,7 +6324,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5679,7 +6392,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5747,7 +6460,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -5833,7 +6546,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -5907,7 +6620,7 @@
       "description": "Actions to take when there are multiple possible mappings of entities to properties and operations.",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "type": "object",
       "required": [
@@ -5979,7 +6692,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6047,7 +6760,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6112,7 +6825,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6180,7 +6893,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6248,7 +6961,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6317,7 +7030,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6386,7 +7099,7 @@
       "description": "Actions to take when there are no more actions in the current dialog.",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "type": "object",
       "required": [
@@ -6461,7 +7174,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6526,7 +7239,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -6597,7 +7310,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6665,7 +7378,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6733,7 +7446,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6801,7 +7514,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6884,7 +7597,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -6952,7 +7665,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7020,7 +7733,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7088,7 +7801,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7156,7 +7869,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7224,7 +7937,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7289,7 +8002,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -7360,7 +8073,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7428,7 +8141,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -7493,7 +8206,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -7530,7 +8243,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -7567,7 +8280,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -7955,7 +8668,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -7998,7 +8711,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8051,7 +8764,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8092,7 +8805,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8165,7 +8878,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8239,7 +8952,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8320,7 +9033,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8370,7 +9083,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8420,7 +9133,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8468,7 +9181,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8548,7 +9261,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8611,7 +9324,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8674,7 +9387,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8717,7 +9430,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8823,7 +9536,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -8887,7 +9600,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8921,7 +9634,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -8966,7 +9679,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -9140,7 +9853,7 @@
       ],
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -9183,7 +9896,7 @@
       },
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "additionalProperties": false,
       "patternProperties": {
@@ -9232,7 +9945,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -9300,7 +10013,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -9334,7 +10047,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
@@ -9399,7 +10112,7 @@
       "type": "object",
       "$package": {
         "name": "Microsoft.Bot.Builder.Dialogs.Adaptive",
-        "version": "4.18.1"
+        "version": "4.16.0"
       },
       "required": [
         "$kind"
