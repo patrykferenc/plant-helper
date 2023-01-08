@@ -56,7 +56,7 @@
           },
           "resultProperty": "turn.results",
           "method": "GET",
-          "url": "http://localhost:45837/api/getWeather?location={user.location}&days={user.days_ahead}"
+          "url": "https://ph-weather.azurewebsites.net/api/getWeather?location={user.location}&days={user.days_ahead}"
         },
         {
           "$kind": "Microsoft.SendActivity",
