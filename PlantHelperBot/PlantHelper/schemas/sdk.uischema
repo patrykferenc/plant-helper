@@ -1,5 +1,160 @@
 {
   "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "Iciclecreek.Cosmos.CreateContainer": {
+    "flow": {
+      "body": "CreateContainer - Database: ${action.database} Container: ${action.container} PartitionKey: ${action.partitionKey}",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "CreateContainer",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.CreateDatabase": {
+    "flow": {
+      "body": "CreateDatabase - Database: ${action.database}",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "CreateDatabase",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.CreateItem": {
+    "flow": {
+      "body": "CreateItem - Database: ${action.database} Container: ${action.container} PartitionKey: ${if(exists(action.partitionKey), action.partitionKey, '(default)')}",
+      "footer": {
+        "description": "= (Item)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "CreateItem",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.DeleteContainer": {
+    "flow": {
+      "body": "DeleteContainer - Database: ${action.database} Container: ${action.container}",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "DeleteContainer",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.DeleteDatabase": {
+    "flow": {
+      "body": "DeleteDatabase - Database: ${action.database} ",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "DeleteDatabase",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.DeleteItem": {
+    "flow": {
+      "body": "DeleteItem - Database: ${action.database} Container: ${action.container} PartitionKey: ${action.partitionKey} ItemId: ${action.itemId}",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "DeleteItem",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.GetItem": {
+    "flow": {
+      "body": "GetItem - Database: ${action.database} Container: ${action.container} PartitionKey: ${action.partitionKey} ItemId: ${action.itemId}",
+      "footer": {
+        "description": "= (Item)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "GetItem",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.QueryItems": {
+    "flow": {
+      "body": "QueryItems - Database: ${action.database} Container: ${action.container} Query: ${action.query}",
+      "footer": {
+        "description": "= (Items[])",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "QueryItems",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.ReplaceItem": {
+    "flow": {
+      "body": "ReplaceItem - Database: ${action.database} Container: ${action.container} PartitionKey: ${if(exists(action.partitionKey), action.partitionKey, '(default)')} Item: {action.itemId}",
+      "footer": {
+        "description": "= (Item)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "ReplaceItem",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
+  "Iciclecreek.Cosmos.UpsertItem": {
+    "flow": {
+      "body": "UpsertItem - Database: ${action.database} Container: ${action.container} PartitionKey: ${if(exists(action.partitionKey), action.partitionKey, '(default)')}",
+      "footer": {
+        "description": "= (Item)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "UpsertItem",
+      "submenu": [
+        "Azure",
+        "CosmosDB"
+      ]
+    }
+  },
   "Microsoft.AdaptiveDialog": {
     "form": {
       "description": "This configures a data driven dialog via a collection of events and actions.",

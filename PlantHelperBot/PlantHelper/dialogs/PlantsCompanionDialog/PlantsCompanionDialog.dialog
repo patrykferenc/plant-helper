@@ -17,11 +17,63 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "MNFxpQ"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_MNFxpQ()}",
+          "property": "user.plant_common_name",
+          "outputFormat": "=toLower(this.value)",
+          "defaultValue": "I could not find ${user.plant_common_name"
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "iiqrFZ"
+            "id": "Isxqj5"
           },
-          "activity": "${SendActivity_iiqrFZ()}"
+          "activity": "${SendActivity_Isxqj5()}"
+        },
+        {
+          "$kind": "Iciclecreek.Cosmos.QueryItems",
+          "$designer": {
+            "id": "POjUUc"
+          },
+          "connectionString": "AccountEndpoint=https://companion-db.documents.azure.com:443/;AccountKey=z5By1UHNChauV3K4MpWQqtTVEryHyiWYBn8GRR2lqyPPXXGGo1alqWZ2ubwh7rwdAt4z8ITYpAMGACDbf2lJTQ==;",
+          "query": "SELECT * FROM plants_helpful p WHERE p.to = \"${user.plant_common_name}\"",
+          "resultProperty": "user.beneficial_plants",
+          "database": "plant-helper-companion",
+          "container": "plants_helpful"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "E2sw9k"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "user.beneficial_plants",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Xosgxd"
+              },
+              "activity": "${SendActivity_Xosgxd()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "4cLbvM"
+              },
+              "activity": "${SendActivity_4cLbvM()}"
+            }
+          ]
         }
       ]
     },
