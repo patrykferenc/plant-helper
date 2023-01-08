@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class CompanionApplicationTests {
 
-	@Disabled("TODO#2: To be removed")
+	//	@Disabled("TODO#2: To be removed")
 	@Test
 	void contextLoads() {
 		// just to make sure that the context loads
