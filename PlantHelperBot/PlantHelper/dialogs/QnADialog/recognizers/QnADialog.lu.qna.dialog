@@ -1,6 +1,6 @@
 {
   "$kind": "Microsoft.CrossTrainedRecognizerSet",
   "recognizers": [
-    "PlantHelper.lu"
+    "QnADialog.lu"
   ]
 }

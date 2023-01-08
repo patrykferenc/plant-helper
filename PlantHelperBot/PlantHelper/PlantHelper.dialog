@@ -66,20 +66,23 @@
                   "disabled": false,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
-                  "allowInterruptions": false,
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "prompt": "${ChoiceInput_Prompt_Q0aprJ()}",
                   "recognizerOptions": {
-                    "recognizeOrdinals": true
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
                   },
                   "choiceOptions": {
-                    "includeNumbers": true
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or "
                   },
                   "property": "user.chosenOption",
                   "outputFormat": "index",
                   "style": "heroCard",
-                  "choices": "=conversation.mainOptions"
+                  "choices": "=conversation.mainOptions",
+                  "allowInterruptions": true
                 },
                 {
                   "$kind": "Microsoft.SwitchCondition",
@@ -102,16 +105,56 @@
                       ]
                     },
                     {
-                      "value": "1"
+                      "value": "1",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "9KCAy1"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "WeatherDialog"
+                        }
+                      ]
                     },
                     {
-                      "value": "2"
+                      "value": "2",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "SyhozP"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "PlantingConditionsDialog"
+                        }
+                      ]
                     },
                     {
-                      "value": "3"
+                      "value": "3",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "Z6lEcV"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "PlantsCompanionDialog"
+                        }
+                      ]
                     },
                     {
-                      "value": "4"
+                      "value": "4",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "ZOsbi0"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "CropImpactDialog"
+                        }
+                      ]
                     }
                   ],
                   "default": [
@@ -153,6 +196,101 @@
           "activity": "${SendActivity_DidNotUnderstand()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "wJxzPH",
+        "name": "gotoCropImpactDialog"
+      },
+      "intent": "gotoCropImpactDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Lzv83G"
+          },
+          "activityProcessed": true,
+          "dialog": "CropImpactDialog"
+        }
+      ],
+      "condition": "=#gotoCropImpactDialog.Score >=0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "sYEJGq",
+        "name": "gotoQnADialog"
+      },
+      "intent": "gotoQnADialog",
+      "condition": "=#gotoQnADialog.Score >=0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "DNacUh"
+          },
+          "activityProcessed": true,
+          "dialog": "QnADialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "aiFBMF",
+        "name": "gotoWeatherDialog"
+      },
+      "intent": "gotoWeatherDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "lrXd8H"
+          },
+          "activityProcessed": true,
+          "dialog": "WeatherDialog"
+        }
+      ],
+      "condition": "=#gotoWeatherDialog.Score >=0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "03Bi3o",
+        "name": "gotoCompanionDialog"
+      },
+      "intent": "gotoCompanionDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "foHUj5"
+          },
+          "activityProcessed": true,
+          "dialog": "PlantsCompanionDialog"
+        }
+      ],
+      "condition": "=#gotoCompanionDialog.Score >=0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "scH51E",
+        "name": "gotoPlantConditionDialog"
+      },
+      "intent": "gotoPlantConditionDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ANf9Q0"
+          },
+          "activityProcessed": true,
+          "dialog": "PlantingConditionsDialog"
+        }
+      ],
+      "condition": "=#gotoPlantConditionDialog.Score >=0.8"
     }
   ],
   "generator": "PlantHelper.lg",

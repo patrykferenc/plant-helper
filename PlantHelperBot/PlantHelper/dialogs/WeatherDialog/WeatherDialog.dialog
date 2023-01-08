@@ -17,6 +17,20 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "r7rYAn"
+          },
+          "property": "user.location"
+        },
+        {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "HyqbEl"
+          },
+          "property": "user.days_ahead"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "EQOUtw",
@@ -28,9 +42,9 @@
           "allowInterruptions": false,
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "prompt": "${TextInput_Prompt_EQOUtw()}",
           "property": "user.location",
-          "defaultValue": "Warsaw"
+          "defaultValue": "Warsaw",
+          "prompt": "${TextInput_Prompt_EQOUtw()}"
         },
         {
           "$kind": "Microsoft.NumberInput",
@@ -44,10 +58,10 @@
           "allowInterruptions": false,
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "prompt": "${NumberInput_Prompt_AMyIQw()}",
           "defaultValue": 0,
           "validations": [],
-          "property": "user.days_ahead"
+          "property": "user.days_ahead",
+          "prompt": "${NumberInput_Prompt_AMyIQw()}"
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -56,7 +70,7 @@
           },
           "resultProperty": "turn.results",
           "method": "GET",
-          "url": "https://ph-weather.azurewebsites.net/api/getWeather?location={user.location}&days={user.days_ahead}"
+          "url": "https://ph-weather.azurewebsites.net/api/getWeather?location=${user.location}&days=${user.days_ahead}"
         },
         {
           "$kind": "Microsoft.SendActivity",

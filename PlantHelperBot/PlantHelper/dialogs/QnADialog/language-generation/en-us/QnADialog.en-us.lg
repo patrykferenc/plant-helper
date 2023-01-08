@@ -6,7 +6,7 @@
 ]
 
 # TextInput_Prompt_UhsV8f_text()
-- Question!
+- Ask me a question
 # SendActivity_QRIs2B()
 [Activity
     Text = ${SendActivity_QRIs2B_text()}

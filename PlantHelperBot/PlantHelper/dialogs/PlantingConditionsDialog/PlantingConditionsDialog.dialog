@@ -15,7 +15,15 @@
         "description": "",
         "id": "7Gou1v"
       },
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "uCDxly"
+          },
+          "activity": "${SendActivity_uCDxly()}"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -32,18 +40,10 @@
           }
         }
       ],
-      "condition": true
+      "condition": "= #BackToMenu.Score >=0.8"
     }
   ],
   "generator": "PlantingConditionsDialog.lg",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "BackToMenu",
-        "pattern": "Back to menu!"
-      }
-    ]
-  },
+  "recognizer": "PlantingConditionsDialog.lu.qna",
   "id": "PlantingConditionsDialog"
 }
