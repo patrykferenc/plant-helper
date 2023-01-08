@@ -1,1 +1,23 @@
 [import](common.lg)
+
+# TextInput_Prompt_EQOUtw()
+[Activity
+    Text = ${TextInput_Prompt_EQOUtw_text()}
+]
+
+# TextInput_Prompt_EQOUtw_text()
+- Could you tell me the location of your weather forecast ? (eg. Warsaw)
+# NumberInput_Prompt_AMyIQw()
+[Activity
+    Text = ${NumberInput_Prompt_AMyIQw_text()}
+]
+
+# NumberInput_Prompt_AMyIQw_text()
+- And how many days ahead ? 
+# SendActivity_CcF47w()
+[Activity
+    Text = ${SendActivity_CcF47w_text()}
+]
+
+# SendActivity_CcF47w_text()
+- ${turn.results}

@@ -15,7 +15,57 @@
         "description": "",
         "id": "MQDijL"
       },
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "EQOUtw",
+            "comment": ""
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_EQOUtw()}",
+          "property": "user.location",
+          "defaultValue": "Warsaw"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "AMyIQw"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${NumberInput_Prompt_AMyIQw()}",
+          "defaultValue": 0,
+          "validations": [],
+          "property": "user.days_ahead"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "GwqXSr"
+          },
+          "resultProperty": "turn.results",
+          "method": "GET",
+          "url": "https://ph-weather.azurewebsites.net/api/getWeather?location={user.location}&days={user.days_ahead}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "CcF47w"
+          },
+          "activity": "${SendActivity_CcF47w()}"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",

@@ -24,16 +24,17 @@ repositories {
 }
 
 azurefunctions {
-    // subscription = '<your subscription id>'
-    resourceGroup = 'java-functions-group'
-    appName = 'azure-function-weather-service-1672686166456' // please rename the function name
+    subscription = '34fea70a-993c-427e-8d9c-2aa34d3c3aff'
+    resourceGroup = 'PlantHelper'
+    appName = 'ph-weather' // please rename the function name
     pricingTier = 'Consumption' // refers https://github.com/microsoft/azure-maven-plugins/tree/develop/azure-functions-maven-plugin#supported-pricing-tiers for all valid values
     region = 'westus'
     runtime {
       os = 'windows'
     }
-    // appSettings {
-    //    key = 'value'
-    // }
+    appSettings {
+        apiKey = '9b9f1a11461144a89d3190722230201 '
+        apiUri = 'http://api.weatherapi.com'
+    }
     // localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }

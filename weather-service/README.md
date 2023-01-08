@@ -15,7 +15,7 @@ The most important thigs to consider are :
  ### Current Weather Report
 Request:
 ```
-GET http://localhost:45837/api/getWeather?location=Warsaw
+GET https://ph-weather.azurewebsites.net/api/getWeather?location=Warsaw
 ```
 Response:
 ```json
@@ -28,7 +28,7 @@ Response:
 ### Forecast Weather Report
 Request:
 ```
-GET http://localhost:45837/api/getWeather?location=Warsaw&days=3
+GET https://ph-weather.azurewebsites.net/api/getWeather?location=Warsaw&days=3
 ```
 Response:
 ```json
@@ -42,11 +42,11 @@ Response:
 #### Format
 With this one the format is a more complicated as it will go something like this:
 ```
-GET http://localhost:45837/api/getWeather?location=Warsaw&dt=yyyy-mm-dd
+GET https://ph-weather.azurewebsites.net/api/getWeather?location=Warsaw&dt=yyyy-mm-dd
 ```
 Request:
 ```
-GET http://localhost:45837/api/getWeather?location=Warsaw&dt=2023-02-02
+GET https://ph-weather.azurewebsites.net/api/getWeather?location=Warsaw&dt=2023-02-02
 ```
 Response:
 ```json
