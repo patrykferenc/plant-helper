@@ -1,12 +1,5 @@
 [import](common.lg)
 
-# SendActivity_isj03J()
-[Activity
-    Text = ${SendActivity_isj03J_text()}
-]
-
-# SendActivity_isj03J_text()
-- Weather!
 # TextInput_Prompt_EQOUtw()
 [Activity
     Text = ${TextInput_Prompt_EQOUtw_text()}
@@ -21,6 +14,7 @@
 
 # NumberInput_Prompt_AMyIQw_text()
 - And how many days ahead?
+
 # SendActivity_CcF47w()
 [Activity
     Text = ${SendActivity_CcF47w_text()}
@@ -31,3 +25,4 @@
 Humidity: ${turn.results.content.humidity} %
 Temperature: ${turn.results.content.temperature}  °C
 Precipitation: ${turn.results.content.percip} mm```
+
