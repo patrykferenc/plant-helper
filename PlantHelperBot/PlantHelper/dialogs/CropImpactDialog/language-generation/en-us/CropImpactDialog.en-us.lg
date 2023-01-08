@@ -1,9 +1,40 @@
 [import](common.lg)
 
-# SendActivity_7dCVYq()
+# ChoiceInput_Prompt_A7IUox()
 [Activity
-    Text = ${SendActivity_7dCVYq_text()}
+    Text = ${ChoiceInput_Prompt_A7IUox_text()}
 ]
 
-# SendActivity_7dCVYq_text()
-- Visualization
+# ChoiceInput_Prompt_A7IUox_text()
+- Choose which chart you are interested in
+# SendActivity_UBp3Dw()
+[HeroCard
+    title = [Beneficial plants](https://planthelper.blob.core.windows.net/powerbireports/Benefitical_plants.jpg)
+    images = https://planthelper.blob.core.windows.net/powerbireports/Benefitical_plants.jpg
+]
+
+# SendActivity_UBp3Dw_text()
+- [HeroCard]
+# SendActivity_ZE8S5z()
+[HeroCard
+    title = [General statistics](https://planthelper.blob.core.windows.net/powerbireports/General stat.jpg)
+    images = https://planthelper.blob.core.windows.net/powerbireports/General stat.jpg
+]
+
+# SendActivity_zMoVnm()
+[HeroCard
+    title = [Harmful plants](https://planthelper.blob.core.windows.net/powerbireports/Harmful_plants.jpg)
+    images = https://planthelper.blob.core.windows.net/powerbireports/Harmful_plants.jpg
+]
+
+# SendActivity_XOMHk7()
+[HeroCard
+    title = [The most disturbed plants](https://planthelper.blob.core.windows.net/powerbireports/Most_disturbed_plants.jpg)
+    images = https://planthelper.blob.core.windows.net/powerbireports/Most_disturbed_plants.jpg
+]
+
+# SendActivity_yUnJMM()
+[HeroCard
+    title = [The most helped plants](https://planthelper.blob.core.windows.net/powerbireports/Most_helped_plants.jpg)
+    images = https://planthelper.blob.core.windows.net/powerbireports/Most_helped_plants.jpg
+]

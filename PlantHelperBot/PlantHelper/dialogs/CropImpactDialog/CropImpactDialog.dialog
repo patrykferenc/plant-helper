@@ -17,11 +17,110 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.DeleteProperty",
           "$designer": {
-            "id": "7dCVYq"
+            "id": "WULonD"
           },
-          "activity": "${SendActivity_7dCVYq()}"
+          "property": "$chart"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "A7IUox"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_A7IUox()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "$chart",
+          "style": "heroCard",
+          "choices": [
+            "Benefitial plants",
+            "General statistics",
+            "Harmful plants",
+            "The most disturbed plants",
+            "The most helped plants"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "W4FxhS"
+          },
+          "condition": "$chart",
+          "cases": [
+            {
+              "value": "Benefitial plants",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "UBp3Dw"
+                  },
+                  "activity": "${SendActivity_UBp3Dw()}"
+                }
+              ]
+            },
+            {
+              "value": "General statistics",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ZE8S5z"
+                  },
+                  "activity": "${SendActivity_ZE8S5z()}"
+                }
+              ]
+            },
+            {
+              "value": "Harmful plants",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "zMoVnm"
+                  },
+                  "activity": "${SendActivity_zMoVnm()}"
+                }
+              ]
+            },
+            {
+              "value": "The most disturbed plants",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "XOMHk7"
+                  },
+                  "activity": "${SendActivity_XOMHk7()}"
+                }
+              ]
+            },
+            {
+              "value": "The most helped plants",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "yUnJMM"
+                  },
+                  "activity": "${SendActivity_yUnJMM()}"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
