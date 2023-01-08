@@ -1,9 +1,60 @@
 [import](common.lg)
 
-# SendActivity_uCDxly()
+# TextInput_Prompt_bPytLx()
 [Activity
-    Text = ${SendActivity_uCDxly_text()}
+    Text = ${TextInput_Prompt_bPytLx_text()}
 ]
 
-# SendActivity_uCDxly_text()
-- conditions for plants
+# TextInput_Prompt_bPytLx_text()
+- Do you want to know what to plant in specific conditions? Please answer my questions. What is the nitrogen content in the soil?
+# TextInput_Prompt_cOEexg()
+[Activity
+    Text = ${TextInput_Prompt_cOEexg_text()}
+]
+
+# TextInput_Prompt_cOEexg_text()
+- What is the content of phosphorus in the soil?
+# TextInput_Prompt_fi7G7y()
+[Activity
+    Text = ${TextInput_Prompt_fi7G7y_text()}
+]
+
+# TextInput_Prompt_fi7G7y_text()
+- What is the potassium content in the soil?
+# TextInput_Prompt_8UMc3W()
+[Activity
+    Text = ${TextInput_Prompt_8UMc3W_text()}
+]
+
+# TextInput_Prompt_8UMc3W_text()
+- What is the temperature in °C?
+# TextInput_Prompt_nHVKJy()
+[Activity
+    Text = ${TextInput_Prompt_nHVKJy_text()}
+]
+
+# TextInput_Prompt_nHVKJy_text()
+- What is the humidity?
+# TextInput_Prompt_mx4wpf()
+[Activity
+    Text = ${TextInput_Prompt_mx4wpf_text()}
+]
+
+# TextInput_Prompt_mx4wpf_text()
+- What is the pH of the soil?
+# TextInput_Prompt_zglzzz()
+[Activity
+    Text = ${TextInput_Prompt_zglzzz_text()}
+]
+
+# TextInput_Prompt_zglzzz_text()
+- How much is the rainfall?
+# SendActivity_U60XRE()
+[Activity
+    Text = ${SendActivity_U60XRE_text()}
+]
+
+# SendActivity_U60XRE_text()
+- ```It's good idea to plant ${turn.results.content[0]} there! 🌱
+
+```

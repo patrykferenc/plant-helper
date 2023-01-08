@@ -17,11 +17,147 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "bmJ4oS"
+          },
+          "properties": [
+            "user.n",
+            "user.p",
+            "user.k",
+            "user.temp",
+            "user.hum",
+            "user.ph",
+            "user.rain"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "bPytLx"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_bPytLx()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.n"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "cOEexg"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_cOEexg()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.p"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "fi7G7y"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_fi7G7y()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.k"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "8UMc3W"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_8UMc3W()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.temp"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "nHVKJy"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_nHVKJy()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.hum"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "mx4wpf"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_mx4wpf()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.ph"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "zglzzz"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_zglzzz()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.rain"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "veUQR6",
+            "comment": "{ \"N\": \"${user.n}\", \"P\": \"${user.p}\", \"K\": \"${user.k}\", \"Temperature\": \"${user.temp}\", \"Humidity\": \"${user.hum}\", \"Ph\": \"${user.ph}\", \"Rainfall\": \"${user.rain}\"}"
+          },
+          "resultProperty": "turn.results",
+          "url": "https://planthelpermlmodelendpoint.northeurope.inference.ml.azure.com/score",
+          "method": "POST",
+          "headers": {
+            "Authorization": "Bearer jzh1FE3PWqtVSHhX5nPqOQ38U0rxZoml",
+            "Content-Type": "application/json",
+            "azureml-model-deployment": "default"
+          },
+          "body": "{\"input_data\": {\"columns\": [\"N\",\"P\",\"K\",\"Temperature\",\"Humidity\",\"Ph\",\"Rainfall\"],\"index\": [1], \"data\": [[\"${user.n}\",\"${user.p}\",\"${user.k}\",\"${user.temp}\",\"${user.hum}\",\"${user.ph}\",\"${user.rain}\"]]}}"
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "uCDxly"
+            "id": "U60XRE"
           },
-          "activity": "${SendActivity_uCDxly()}"
+          "activity": "${SendActivity_U60XRE()}"
         }
       ]
     },
