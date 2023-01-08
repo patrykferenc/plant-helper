@@ -1,0 +1,23 @@
+artifact_path: outputs/mlflow-model
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.7.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: pickle
+    sklearn_version: 0.22.1
+mlflow_version: 1.30.0
+model_uuid: 2daf0234ac3a42c4b864327847ff227f
+run_id: AutoML_ebeceb2d-b70e-4cee-b4fd-3bf49354ac92_27
+signature:
+  inputs: '[{"name": "N", "type": "float"}, {"name": "P", "type": "float"}, {"name":
+    "K", "type": "float"}, {"name": "Temperature", "type": "string"}, {"name": "Humidity",
+    "type": "string"}, {"name": "Ph", "type": "string"}, {"name": "Rainfall", "type":
+    "string"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "str", "shape": [-1]}}]'
+utc_time_created: '2023-01-06 23:34:34.756630'
