@@ -24,11 +24,11 @@ The project's main aim was to create a all-in-one encompasing information and an
 
 ## Services
 - Plant Helper Bot as an interface
-- Plant Companion DB (Cosmos DB)
+- Plant Companion DB (Cosmos DB NoSQL)
 - Azure Data Factory
 - ML Recomendation Model ( Machine Learning )
-- Weather Function ( Function App )
-- Plant Companion Function ( Function App)
+- Weather Function ( Function App - Java )
+- Plant Companion Function ( Function App - Java + Spring Boot)
 - Storage Accounts
 - Azure Network
 - Power BI
@@ -36,7 +36,8 @@ The project's main aim was to create a all-in-one encompasing information and an
 - LUIS
 
 ## Architecture diagram
-![320982824_1912999922375071_5192715721669556521_n](https://user-images.githubusercontent.com/72550341/211370652-4c44b222-3845-48c4-ac2c-629c87a72c50.png)
+![plant-helper drawio](https://user-images.githubusercontent.com/81482531/211417049-5099e63a-49a6-44dd-a7ca-e440b3960140.png)
+
 
 ## User Guide
 At the begining of conversation with PlantHelper bot you have five options from main menu:
@@ -79,7 +80,7 @@ https://youtu.be/-rhfQ5SoaaY
 * **Katya Kutsepina**:
     * [x] Create a visualization in PowerBI
 
-3. TODO by **9.11.2023**:
+3. TODO by **9.01.2023**:
 * **Luiza Krzepkowska**:
     * [x] Record a demo
     * [x] Integrate the ml model with the bot 
