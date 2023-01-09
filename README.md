@@ -1,6 +1,6 @@
 # plant-helper
 
-Azure 
+This is a project for 'Azure and Ai based solutions' 2022/2023 at Applied Computer Science EE WUT. 
 
 ## Goal
 
@@ -8,10 +8,10 @@ The project's main aim was to create a all-in-one encompasing information and an
 
 ## Features
 
-- Users can get recommended plants to plant in the given soil
-- Users can get recommendations as to which plants can be planted near each other (and which not)
-- Users will get info about the impact (positive or negative) of their crops
-- Users will also receive info about the current weather (where? when? how?)
+- Plant recomendation based on soil with AI feedback
+- Strategies of which plants could be near each other and which cannot
+- Crop impact analisys based on previously mentioned factors
+- Weather forecast with feedback loop back into AI-based solution
 
 ## Services
 - Plant Helper Bot as an interface
