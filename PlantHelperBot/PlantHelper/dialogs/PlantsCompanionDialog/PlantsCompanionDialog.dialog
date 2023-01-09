@@ -17,6 +17,16 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "SutYLd"
+          },
+          "properties": [
+            "user.plant_common_name",
+            "user.beneficial_plants"
+          ]
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "MNFxpQ"
@@ -51,27 +61,47 @@
           "container": "plants_helpful"
         },
         {
-          "$kind": "Microsoft.Foreach",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "E2sw9k"
+            "id": "468GqZ"
           },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
-          "itemsProperty": "user.beneficial_plants",
+          "condition": "=count(user.beneficial_plants) > 0",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "Xosgxd"
+                "id": "Xosgxd",
+                "comment": ""
               },
               "activity": "${SendActivity_Xosgxd()}"
             },
             {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "E2sw9k",
+                "comment": ""
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "itemsProperty": "user.beneficial_plants",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "4cLbvM"
+                  },
+                  "activity": "${SendActivity_4cLbvM()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "4cLbvM"
+                "id": "0XxFlW"
               },
-              "activity": "${SendActivity_4cLbvM()}"
+              "activity": "${SendActivity_0XxFlW()}"
             }
           ]
         }

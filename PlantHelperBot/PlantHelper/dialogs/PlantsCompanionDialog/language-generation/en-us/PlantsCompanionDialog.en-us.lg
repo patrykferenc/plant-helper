@@ -20,11 +20,18 @@
 ]
 
 # SendActivity_4cLbvM_text()
-- Try planting: ${getProperty(dialog.foreach.value, "from")}
+- ${getProperty(dialog.foreach.value, "from")}
 # SendActivity_Xosgxd()
 [Activity
     Text = ${SendActivity_Xosgxd_text()}
 ]
 
 # SendActivity_Xosgxd_text()
-- Here are some plants that might be beneficial for yours!
+- Here are some plants that might be beneficial for yours! 🌱
+# SendActivity_0XxFlW()
+[Activity
+    Text = ${SendActivity_0XxFlW_text()}
+]
+
+# SendActivity_0XxFlW_text()
+- Unfortunately, I couldn't find any plants that might help yours 😔

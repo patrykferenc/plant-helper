@@ -20,7 +20,7 @@
             "items": [
                 {
                     "type": "TextBlock",
-                    "text": "Welcome to your bot!",
+                    "text": "Welcome to PlantHelper bot!",
                     "wrap": true,
                     "weight": "default",
                     "size": "medium"
